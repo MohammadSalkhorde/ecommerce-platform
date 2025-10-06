@@ -1,32 +1,51 @@
-# Online Store
+# ProShop - Professional E-commerce Platform
 
-An online store project built with **Django** that allows managing products, categories, users, and orders. The project includes a professional admin panel, product display, shopping cart, SMS-based authentication, and payment gateway integration.
+ProShop is a fully-featured online store built with **Django**, offering user registration with SMS authentication, personalized user dashboards, product management, and advanced admin functionalities. The platform is designed for learning full-stack development or as a starting point for production-level e-commerce.
 
-This project is ideal for learning full-stack Django development or as a starting point for a production-level e-commerce platform.
+![ProShop Demo](media/demo/homepage.png)
 
 ---
 
 ## Technologies
 
-- **Backend:** Python, Django  
-- **Frontend:** HTML, CSS, JavaScript  
-- **Database:** MySQL  
-- **APIs:** SMS authentication, ZarinPal payment gateway
+* **Backend:** Python, Django, Django REST Framework
+* **Frontend:** HTML, CSS, JavaScript
+* **Databases:** MySQL, PostgreSQL, SQLite, MongoDB
+* **APIs:** SMS authentication, ZarinPal payment gateway
 
 ---
 
 ## Features
 
-- Product management with categories and detailed information  
-- User registration and authentication (with SMS verification)  
-- Shopping cart and order management  
-- Admin panel for managing products, users, and orders  
-- Payment gateway integration (ZarinPal)  
-- Automatic handling of product images in the `media/` folder
+### User Dashboard
+
+* User registration and authentication with SMS verification
+* Profile management including profile picture
+* Recent orders, payment history, invoices
+* Wishlist, compare list, shopping cart
+
+### Product Management
+
+* Product listing with filters and categories
+* Admin panel for managing sliders, discounts, and discount bundles
+* Automatic application of product discounts
+* Advanced product search and filtering
+
+### Orders & Payment
+
+* Shopping cart and checkout process
+* Payment via ZarinPal gateway
+* Order tracking and invoice generation
+
+### Admin Panel
+
+* Full control over products, categories, users, orders, and discounts
+* Slider and banner management
+* Discount and promotional campaign management
 
 ---
 
-## Installation and Setup
+## Installation & Setup
 
 ### 1. Clone the project
 
@@ -39,13 +58,15 @@ cd shop_project
 
 ```bash
 python -m venv venv
+
 # Windows
 venv\Scripts\activate
+
 # Linux / macOS
 source venv/bin/activate
 ```
 
-### 3. Install required packages
+### 3. Install dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -53,7 +74,7 @@ pip install -r requirements.txt
 
 ### 4. Configure the database
 
-Create a MySQL database and enter the connection details in `settings.py` or a `.env` file:
+Set your database credentials in `.env` or `settings.py`:
 
 ```
 DB_NAME=your_database_name
@@ -76,15 +97,7 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-> The application will be accessible at `http://127.0.0.1:8000/`.
-
----
-
-## Important Notes
-
-- **SMS Authentication and Payment Gateway:** You need to provide your own API keys for SMS verification and ZarinPal payment integration.  
-- **Media Folder:** Ensure the `media/` folder exists alongside `static/`. Product images will be automatically saved in an organized structure within this folder.  
-- **Sensitive Files:** Files like `venv/` and `.env` are ignored in GitHub for security reasons.
+> Access the application at `http://127.0.0.1:8000/`
 
 ---
 
@@ -94,16 +107,16 @@ python manage.py runserver
 shop_project/
 │
 ├── shop/
-│   ├── apps/                   # Project applications
-│   ├── middlewares/            # Middlewares
-│   ├── static/                 # CSS, JS, and static assets
-│   ├── media/                  # Product and user images
-│   └── templates/              # HTML templates
-│   ├── manage.py               # Main Django management file
-│   ├── utils.py                # Helper functions
-│   └── custompermissions.py    # Custom permission classes
+│   ├── apps/
+│   ├── middlewares/
+│   ├── static/
+│   ├── media/
+│   └── templates/
+│   ├── manage.py
+│   ├── utils.py
+│   └── custompermissions.py
 │
-├── venv/                       # Virtual environment (ignored by Git)
+├── venv/
 ├── .gitignore
 ├── README.md
 └── requirements.txt
@@ -111,17 +124,13 @@ shop_project/
 
 ---
 
-## License
+## Contact & Portfolio
 
-This project is for **educational and personal development purposes**. Review security and configuration settings before deploying in a production environment.
+Hi, I'm Mohammad 👋
+Python / Django Backend Developer — building REST APIs and web applications.
+Open to freelance & remote opportunities.
 
----
-
-## Contact / Portfolio
-
-For professional inquiries or collaboration, feel free to contact me:
-
-- **GitHub:** [https://github.com/MohammadSalkhorde](https://github.com/MohammadSalkhorde)  
-- **Email:** m.salkhorde444@gmail.com 
-- **LinkedIn:** [https://www.linkedin.com/in/mohammad-salkhorde-a13767385](https://www.linkedin.com/in/mohammad-salkhorde-a13767385)
-- **Portfolio:** [https://mohammadsalkhorde.github.io/portfolio/](https://mohammadsalkhorde.github.io/portfolio/)
+* **GitHub:** [https://github.com/MohammadSalkhorde](https://github.com/MohammadSalkhorde)
+* **LinkedIn:** [https://www.linkedin.com/in/mohammad-salkhorde-a13767385](https://www.linkedin.com/in/mohammad-salkhorde-a13767385)
+* **Portfolio:** [https://MohammadSalkhorde.github.io/portfolio/](https://MohammadSalkhorde.github.io/portfolio/)
+* **Email:** [m.salkhorde444@gmail.com](mailto:m.salkhorde444@gmail.com)
