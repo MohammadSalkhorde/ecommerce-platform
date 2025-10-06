@@ -2,8 +2,6 @@
 
 ProShop is a fully-featured online store built with **Django**, offering user registration with SMS authentication, personalized user dashboards, product management, and advanced admin functionalities. The platform is designed for learning full-stack development or as a starting point for production-level e-commerce.
 
-![ProShop Demo](media/demo/homepage.png)
-
 ---
 
 ## Technologies
