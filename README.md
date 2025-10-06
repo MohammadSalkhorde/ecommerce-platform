@@ -94,15 +94,18 @@ python manage.py runserver
 shop_project/
 │
 ├── shop/
-│   ├── apps/           # Project applications
-│   ├── shop/           # Django settings and main files
-│   ├── static/         # CSS, JS, and static assets
-│   ├── media/          # Product and user images
-│   └── templates/      # HTML templates
+│   ├── apps/                   # Project applications
+│   ├── middlewares/            # Middlewares
+│   ├── static/                 # CSS, JS, and static assets
+│   ├── media/                  # Product and user images
+│   └── templates/              # HTML templates
+│   ├── manage.py               # Main Django management file
+│   ├── utils.py                # Helper functions
+│   └── custompermissions.py    # Custom permission classes
 │
-├── venv/               # Virtual environment (ignored by Git)
+├── venv/                       # Virtual environment (ignored by Git)
 ├── .gitignore
-├── manage.py
+├── README.md
 └── requirements.txt
 ```
 
