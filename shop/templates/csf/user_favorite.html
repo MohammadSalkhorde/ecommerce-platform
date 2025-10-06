@@ -1,0 +1,88 @@
+{% extends "main.html" %} 
+{% load humanize %}
+{% load render_partial %}
+{% block main %}
+{% if user_favorite %}
+<div class="site__body">
+  <div class="page-header">
+    <div class="page-header__container container">
+      <div class="page-header__breadcrumb">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="index.html">خانه</a>
+              /
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">علاقه‌مندی‌ها</li>
+          </ol>
+        </nav>
+      </div>
+      <div class="page-header__title">
+        <h1>علاقه‌مندی‌ها</h1>
+      </div>
+    </div>
+  </div>
+  <div class="block">
+    <div class="container">
+      <table class="wishlist">
+        <thead class="wishlist__head">
+          <tr class="wishlist__row">
+            <th class="wishlist__column wishlist__column--image">تصویر</th>
+            <th class="wishlist__column wishlist__column--product">محصول</th>
+            <th class="wishlist__column wishlist__column--stock">وضعیت انبار</th>
+            <th class="wishlist__column wishlist__column--price">قیمت</th>
+            <th class="wishlist__column wishlist__column--tocart"></th>
+            <th class="wishlist__column wishlist__column--remove"></th>
+          </tr>
+        </thead>
+        <tbody class="wishlist__body">
+          {% for favorite in user_favorite %}
+            <tr class="wishlist__row">
+              <td class="wishlist__column wishlist__column--image">
+                <a href=""><img src="{{media}}/{{favorite.product.image_name}}" alt="" /></a>
+              </td>
+              <td class="wishlist__column wishlist__column--product">
+                <a href="{% url "products:product_detail" slug=favorite.product.slug %}" class="wishlist__product-name">{{favorite.product.product_name}}</a>
+              </td>
+              <td class="wishlist__column wishlist__column--stock">
+                {% if favorite.product.get_number_in_warehouse > 0 %}
+                  <div class="badge badge-success">موجود در انبار</div>
+                {% else %}
+                  <div class="badge badge-success" style="background-color: red;">موجود نمیباشد</div>
+                {% endif %}
+              </td>
+              {% if favorite.product.price > favorite.product.get_price_by_discount %}
+                <td class="wishlist__column wishlist__column--price">{{favorite.product.get_price_by_discount|intcomma}} تومان</td>
+              {% else %}
+                <td class="wishlist__column wishlist__column--price">{{favorite.product.price|intcomma}} تومان</td>
+              {% endif %}
+              {% if favorite.product.get_number_in_warehouse > 0 %}
+                <td class="wishlist__column wishlist__column--tocart">
+                  <button type="button" class="btn btn-primary btn-sm" onclick="add_to_shop_cart({{favorite.product.id}}, 1)">افزودن به سبد</button>
+                </td>
+              {% else %}
+                <td class="wishlist__column wishlist__column--tocart">
+                  <button type="button" class="btn btn-primary btn-sm" style="background-color: gray; cursor: default; border: 0;">افزودن به سبد</button>
+                </td>
+                {% endif %}
+                <td class="wishlist__column wishlist__column--remove">
+                  <button type="button" class="btn btn-light btn-sm btn-svg-icon" >
+                    <a href="{% url 'csf:delete_from_favorite' favorite.product.id %}" style="color: #3d464d;">
+                      <i class="fa fa-trash"></i>
+                    </a>
+                  </button>
+                  {% comment %} <svg width="12px" height="12px">
+                    <use xlink:href="images/sprite.svg#cross-12"></use>
+                  </svg> {% endcomment %}
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% else %}
+{% include "partials/products/not_found_product.html" with title='💖 اوه! لیست علاقه‌مندی‌های شما خالیه 😅 یه چیزی بهش اضافه کن!' %}
+{% endif %}
+{% endblock %}

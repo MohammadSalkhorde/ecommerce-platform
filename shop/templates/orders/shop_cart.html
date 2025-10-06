@@ -1,0 +1,8 @@
+{% extends "main.html" %} 
+{% load humanize %}
+{% load render_partial %}
+{% block main %}
+    <div id="shop_cart_list">
+        {% render_partial "orders:show_shop_cart"%}
+    </div>
+{% endblock main %}

@@ -1,0 +1,25 @@
+{% extends "main.html" %} 
+{% load humanize %}
+{% load render_partial %}
+{% block main %}
+  
+  <div class="block-categories__list">
+            {% for group in product_groups %}
+                <div class="block-categories__item category-card category-card--layout--compact">
+                    <div class="category-card__body">
+                        <div class="category-card__image">
+                            <a href="{% url "products:products_by_group" slug=group.slug %}">
+                                <img src="{{ media }}{{ group.image_name }}" alt="">
+                            </a>
+                        </div>
+                        <div class="category-card__content">
+                            <div class="category-card__name"><a href="{% url "products:products_by_group" slug=group.slug %}">{{ group.group_title }}</a></div>
+                            {% comment %} <div class="category-card__all"><a href="">نمایش همه</a></div> {% endcomment %}
+                            <div class="category-card__products">{{ group.products_of_groups.all|length }} محصول</div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+{% endblock main %}

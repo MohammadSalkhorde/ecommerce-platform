@@ -1,0 +1,39 @@
+<div class="empty-favorites">
+  <h2>{{title}}</h2>
+</div>
+
+<style>
+.empty-favorites {
+    min-height: calc(100vh - 120px); /* تا فوتر نچسبه */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.empty-favorites h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #444;
+    text-align: center;
+    letter-spacing: 1px;
+    position: relative;
+    padding: 15px 30px;
+    line-height: 1.6;
+}
+
+.empty-favorites h2::after {
+    content: "";
+    position: absolute;
+    width: 60%;
+    height: 3px;
+    background: linear-gradient(90deg, #ff4d6d, #ffb347);
+    bottom: 0;
+    left: 20%;
+    border-radius: 2px;
+    opacity: 0.8;
+}
+
+.empty-favorites h2 span {
+    color: #ff4d6d; /* کلمه کلیدی رنگ متفاوت */
+}
+</style>

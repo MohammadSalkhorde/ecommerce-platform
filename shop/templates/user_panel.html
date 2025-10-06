@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="fa" dir="rtl">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="format-detection" content="telephone=no">
+	<title>فروشگاه درسمن</title>
+	<link rel="icon" type="image/png" href="images/favicon.png">
+	<!-- css -->
+	<link rel="stylesheet" href="{% static "vendor/bootstrap-4.5.3/css/bootstrap.min.css" %}">
+	<link rel="stylesheet" href="{% static "vendor/owl-carousel-2.3.4/assets/owl.carousel.min.css" %}">
+	<link rel="stylesheet" href="{% static "css/style.css" %}">
+	<link rel="stylesheet" href="{% static "css/custom.css" %}">
+	<!-- js -->
+	<script src="{% static "vendor/jquery-3.3.1/jquery.min.js" %}"></script>
+	<script src="{% static "vendor/bootstrap-4.5.3/js/bootstrap.bundle.min.js" %}"></script>
+	<script src="{% static "vendor/owl-carousel-2.3.4/owl.carousel.min.js" %}"></script>
+	<script src="{% static "js/main.js" %}"></script>
+	<script src="{% static "js/my_script.js" %}"></script>
+	<!-- font - fontawesome -->
+	<link rel="stylesheet" href="{% static "vendor/fontawesome-5.6.3/css/all.min.css" %}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    {% include "partials/header/header.html" %}
+
+    {% include "partials/messages.html" %}
+    <!-- site -->
+    <div class="site">
+      <div class="site__body">
+        <div class="page-header">
+          <div class="page-header__container container">
+            <div class="page-header__breadcrumb">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                    <a href="../index.html">خانه</a>
+                    /
+                  </li>
+                  <li class="breadcrumb-item">
+                    <a href="">داشبورد</a>
+                  </li>
+                </ol>
+              </nav>
+            </div>
+            <div class="page-header__title">
+              <h1>حساب کاربری</h1>
+            </div>
+          </div>
+        </div>
+        <div class="block">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-lg-3 d-flex">
+                <div class="account-nav flex-grow-1">
+                  <h4 class="account-nav__title">ناوبری</h4>
+                  <ul>
+                    <li class="account-nav__item account-nav__item--active">
+                      <a href="{% url "accounts:panel" %}">داشبورد</a>
+                    </li>
+                    <li class="account-nav__item">
+                      <a href="{% url "accounts:update_profile" %}">ویرایش پروفایل</a>
+                    </li>
+                    <li class="account-nav__item">
+                      <a href="{% url "accounts:show_user_payments" %}">سابقه خرید</a>
+                    </li>
+                    <li class="account-nav__item">
+                      <a href="{% url "accounts:change-password" %}">تغییر رمز عبور</a>
+                    </li>
+                    <li class="account-nav__item">
+                      <a href="{% url "accounts:logout" %}">خروج</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-12 col-lg-9 mt-4 mt-lg-0">
+                {% block main %}{% endblock main %}
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- site__body -->
+
+      <!-- site__body / end -->
+
+      <!-- site__footer -->
+
+      <!-- site__footer / end -->
+    </div>
+    <!-- site / end -->
+{% include "partials/footer/footer.html" %}
+
+
+<script src="{% static "js/script.js" %}"></script>
+
+    
+</body>
+</html>

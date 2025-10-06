@@ -1,0 +1,19 @@
+{% extends "main.html" %} 
+{% load humanize %}
+{% load render_partial %}
+{% block main %}
+
+{% if products %}
+    <div>
+        <div class="container">
+            <h2 style="text-align: center;">نتیجه جستجوی شما</h2>
+            <div class="product-flexbox">
+                {% for product in products %}
+                    {% include "partials/products/product_box.html" %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endif %}
+{% include "partials/products/not_found_product.html" with title='هیچ کالایی یافت نشد' %}
+{% endblock %}

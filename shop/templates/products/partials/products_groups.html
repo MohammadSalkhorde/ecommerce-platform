@@ -1,0 +1,10 @@
+{% for group in product_groups %}
+  <ul class="filter-categories__list">
+    <li class="filter-categories__item filter-categories__item--parent">
+      <svg class="filter-categories__arrow" width="6px" height="9px">
+        <use xlink:href="images/sprite.svg#arrow-rounded-left-6x9"></use>
+      </svg> <a href="{% url 'products:products_by_group' slug=group.slug %}">{{ group.group_title }}</a>
+      <div class="filter-categories__counter">{{ group.products_of_groups.all|length }}</div>
+    </li>
+  </ul>
+{% endfor %}

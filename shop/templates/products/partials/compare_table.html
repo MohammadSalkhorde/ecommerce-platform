@@ -1,0 +1,32 @@
+{% if products %}
+<div class="container">
+    <h2 style="text-align: center;">کالاهای انتخابی برای مقایسه</h2>
+    <table class="table table=bordered">
+        <tr style="background: #f1f1f1; text-align: center;">
+            <th>ویژگی کالا / کالا</th>
+            {% for product in products %}
+                <th>
+                    <i class="fa fa-times product-remove" style="color: red; margin: 5px; cursor: pointer;" onclick="deleteFromCompareList({{product.id}})"></i>
+                    <a href="{% url "products:product_detail" slug=product.slug %}" style="color: black;">{{product.product_name}}</a>
+                </th>
+            {% endfor %}
+        </tr>
+        {% for feature in features %}
+            <tr>
+                <td style="font-size: 1.2rem; font-weight: 900; width: 25%;">{{feature}}</td>
+                {% for product in products %}
+                    <td style="text-align: center;">
+                        {% for item in product.product_features.all %}
+                            {% if item.feature == feature %}
+                                <span style="margin: 5px;">{{item.filter_value.value_title}}</span>
+                            {% endif %}
+                        {% endfor %}
+                    </td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+{% else %}
+{% include "partials/products/not_found_product.html" with title="هیچ کالایی برای مقایسه وجود ندارد" %}
+{% endif %}

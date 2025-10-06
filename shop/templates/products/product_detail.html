@@ -1,0 +1,685 @@
+{% extends "main.html" %} 
+{% load humanize %}
+{% load render_partial %}
+{% block main %}
+    <div class="site__body">
+        <div class="page-header">
+            <div class="page-header__container container">
+                <div class="page-header__breadcrumb">
+                    {% comment %} <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="index.html">خانه</a>
+                                /
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="#">محصولات</a>
+                                /
+                            </li>
+                            <li class="active" aria-current="page">محصول</li>
+                        </ol>
+                    </nav> {% endcomment %}
+                </div>
+            </div>
+        </div>
+        <div class="block">
+            <div class="container">
+                <div class="product product--layout--columnar" data-layout="columnar">
+                    <div class="product__content">
+                        <!-- .product__gallery -->
+                        <div class="product__gallery">
+                            <div class="product-gallery">
+                                <div class="product-gallery__featured">
+                                    <div class="owl-carousel" id="product-image">
+                                        <a href="images/products/product-16.jpg" target="_blank"><img src="{{ media }}/{{ product.image_name }}" alt=""> </a>
+                                        {% for img in product.product_gallery.all %}
+                                            <a href="images/products/product-16-1.jpg" target="_blank"><img src="{{ media }}/{{ img.image_name }}" alt=""> </a>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <div class="product-gallery__carousel">
+                                    <div class="owl-carousel" id="product-carousel">
+                                        <a href="" class="product-gallery__carousel-item"><img class="product-gallery__carousel-image" src="{{ media }}/{{ product.image_name }}" alt=""> </a>
+                                        {% for img in product.product_gallery.all %}
+                                            <a href="" class="product-gallery__carousel-item"><img class="product-gallery__carousel-image" src="{{ media }}/{{ img.image_name }}" alt=""> </a>
+                                        {% endfor %}
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- .product__gallery / end -->
+                        <!-- .product__info -->
+                        <div class="product__info">
+                            <div class="product__wishlist-compare">
+                                <button type="button" class="btn btn-sm btn-light btn-svg-icon" data-toggle="tooltip" data-placement="right" title="Wishlist">
+                                    <svg width="16px" height="16px">
+                                        <use xlink:href="images/sprite.svg#wishlist-16"></use>
+                                    </svg>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-light btn-svg-icon" data-toggle="tooltip" data-placement="right" title="Compare">
+                                    <svg width="16px" height="16px">
+                                        <use xlink:href="images/sprite.svg#compare-16"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                            <h1 class="product__name">{{ product.product_name }}</h1>
+                            <div class="product__rating">
+                                <div class="product__rating-stars">
+                                    <div class="rating">
+                                        <div class="rating__body">
+                                            <svg class="rating__star rating__star--active" width="13px" height="12px">
+                                                <g class="rating__fill">
+                                                    <use xlink:href="images/sprite.svg#star-normal"></use>
+                                                </g>
+                                                <g class="rating__stroke">
+                                                    <use xlink:href="images/sprite.svg#star-normal-stroke"></use>
+                                                </g>
+                                            </svg>
+                                            <div class="rating__star rating__star--only-edge rating__star--active">
+                                                <div class="rating__fill">
+                                                    <div class="fake-svg-icon"></div>
+                                                </div>
+                                                <div class="rating__stroke">
+                                                    <div class="fake-svg-icon"></div>
+                                                </div>
+                                            </div>
+                                            <svg class="rating__star rating__star--active" width="13px" height="12px">
+                                                <g class="rating__fill">
+                                                    <use xlink:href="images/sprite.svg#star-normal"></use>
+                                                </g>
+                                                <g class="rating__stroke">
+                                                    <use xlink:href="images/sprite.svg#star-normal-stroke"></use>
+                                                </g>
+                                            </svg>
+                                            <div class="rating__star rating__star--only-edge rating__star--active">
+                                                <div class="rating__fill">
+                                                    <div class="fake-svg-icon"></div>
+                                                </div>
+                                                <div class="rating__stroke">
+                                                    <div class="fake-svg-icon"></div>
+                                                </div>
+                                            </div>
+                                            <svg class="rating__star rating__star--active" width="13px" height="12px">
+                                                <g class="rating__fill">
+                                                    <use xlink:href="images/sprite.svg#star-normal"></use>
+                                                </g>
+                                                <g class="rating__stroke">
+                                                    <use xlink:href="images/sprite.svg#star-normal-stroke"></use>
+                                                </g>
+                                            </svg>
+                                            <div class="rating__star rating__star--only-edge rating__star--active">
+                                                <div class="rating__fill">
+                                                    <div class="fake-svg-icon"></div>
+                                                </div>
+                                                <div class="rating__stroke">
+                                                    <div class="fake-svg-icon"></div>
+                                                </div>
+                                            </div>
+                                            <svg class="rating__star rating__star--active" width="13px" height="12px">
+                                                <g class="rating__fill">
+                                                    <use xlink:href="images/sprite.svg#star-normal"></use>
+                                                </g>
+                                                <g class="rating__stroke">
+                                                    <use xlink:href="images/sprite.svg#star-normal-stroke"></use>
+                                                </g>
+                                            </svg>
+                                            <div class="rating__star rating__star--only-edge rating__star--active">
+                                                <div class="rating__fill">
+                                                    <div class="fake-svg-icon"></div>
+                                                </div>
+                                                <div class="rating__stroke">
+                                                    <div class="fake-svg-icon"></div>
+                                                </div>
+                                            </div>
+                                            <svg class="rating__star rating__star--active" width="13px" height="12px">
+                                                <g class="rating__fill">
+                                                    <use xlink:href="images/sprite.svg#star-normal"></use>
+                                                </g>
+                                                <g class="rating__stroke">
+                                                    <use xlink:href="images/sprite.svg#star-normal-stroke"></use>
+                                                </g>
+                                            </svg>
+                                            <div class="rating__star rating__star--only-edge rating__star--active">
+                                                <div class="rating__fill">
+                                                    <div class="fake-svg-icon"></div>
+                                                </div>
+                                                <div class="rating__stroke">
+                                                    <div class="fake-svg-icon"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product__description">
+                              
+                                {{product.summery_description}}
+                                
+                            </div>
+                            <!-- <ul class="product__features">
+                                <li>سرعت: 750 RPM</li>
+                                <li>منبع تغزیه: برق</li>
+                                <li>نوع باتری: لیتیوم</li>
+                                <li>ولتاژ: 20 ولت</li>
+                                <li>ظرفیت باتری: 2 ساعت</li>
+                            </ul> -->
+                            <ul class="product__meta">
+                                <li class="product__meta-availability">موجودی: <span class="text-success">موجود در انبار</span></li>
+                                <li>برند: <a href="">{{ product.brand }}</a></li>
+                                <li>تعداد نظرات: <a href="">{{product.comments_product.all|length}}</a> نظر</li>
+
+                            </ul>
+                            <div style="display: flex; justify-content: space-between;">
+                                <h6>
+                                میانگین امتیاز کالا: 
+                                <span id="average-score" style="color: red;">{{product.get_average_score}}</span> 
+                                از <span style="color: red;">5</span>
+                                </h6>
+                                {% if user.is_authenticated %}
+                                    {% if product.get_user_score > 0 %}
+                                        <div class="stars">
+                                            {% with ''|center:5 as range %}
+                                                {% for i in range %}
+                                                    {% if forloop.counter <= product.get_average_score %}
+                                                        <span id="start_{{forloop.counter}}" class="fa fa-star checked"></span>
+                                                    {% else %}
+                                                        <span id="start_{{forloop.counter}}" class="fa fa-star"></span>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            {% endwith %}
+                                        </div>
+                                        
+                                        <style>
+                                            .stars {
+                                                display: flex;
+                                                gap: 0; /* فاصله صفر */
+                                            }
+                                            .stars span {
+                                                line-height: 1;
+                                                margin: 0;
+                                                padding: 0;
+                                                cursor: pointer;
+                                                color: gray; /* رنگ پیش‌فرض ستاره‌های خالی */
+                                            }
+
+                                        </style>
+                                        {% else %}
+                                            <div class="stars">
+                                                <span id="start_1" class="fa fa-star cursor-pointer" onclick="addScore(1,{{product.id}})"></span>
+                                                <span id="start_2" class="fa fa-star cursor-pointer" onclick="addScore(2,{{product.id}})"></span>
+                                                <span id="start_3" class="fa fa-star cursor-pointer" onclick="addScore(3,{{product.id}})"></span>
+                                                <span id="start_4" class="fa fa-star cursor-pointer" onclick="addScore(4,{{product.id}})"></span>
+                                                <span id="start_5" class="fa fa-star cursor-pointer" onclick="addScore(5,{{product.id}})"></span>
+                                            </div>
+
+                                            <style>
+                                            .stars {
+                                                display: flex;   /* ستاره‌ها رو بچسبون */
+                                                gap: 0;          /* فاصله بینشون صفر */
+                                            }
+                                            .stars span {
+                                                line-height: 1;  
+                                                margin: 0;
+                                                padding: 0;
+                                                cursor: pointer; /* موس بشه دست */
+                                                color: gray;    /* رنگ ستاره‌ها */
+                                        }
+                                            </style>
+                                        {% endif %}
+                                {% else %}
+                                    <div class="stars">
+                                    <a href="{% url 'accounts:login' %}"><span class="fa fa-star cursor-pointer"></span></a>
+                                    <a href="{% url 'accounts:login' %}"><span class="fa fa-star cursor-pointer"></span></a>
+                                    <a href="{% url 'accounts:login' %}"><span class="fa fa-star cursor-pointer"></span></a>
+                                    <a href="{% url 'accounts:login' %}"><span class="fa fa-star cursor-pointer"></span></a>
+                                    <a href="{% url 'accounts:login' %}"><span class="fa fa-star cursor-pointer"></span></a>
+                                    </div>
+
+                                    <style>
+                                        .stars {
+                                            display: flex;
+                                            gap: 0; /* فاصله بینشون صفر بشه */
+                                        }
+                                        .stars a {
+                                            line-height: 1; /* برای جلوگیری از فاصله عمودی اضافی */
+                                        }
+                                        
+                                        .stars .fa-star {
+                                            color: gray; 
+                                        }
+
+                                    </style>
+                                {% endif %}
+                            </div>
+                            <a onclick="addToCompareList({{ product.id }}, {{ product.getMainProductGroups }})" 
+                            style="cursor: pointer; font-weight: bold; display: inline-flex; align-items: center; gap: 5px;" class="h">
+                                <i class="fa fa-balance-scale" style="font-size: 20px;"></i>
+                                افزودن به سبد مقایسه
+                            </a>
+                            
+                            <style>
+                                .h {
+                                    color: black;
+                                    transition: color 0.3s ease; /* نرم‌تر تغییر رنگ بده */
+                                }
+                                .h:hover {
+                                    color: red;
+                                }
+                            </style>
+                        </div>
+                        <!-- .product__info / end -->
+                        <!-- .product__sidebar -->
+                        <div class="product__sidebar">
+                            {% if product.get_number_in_warehouse <= 0 %}
+                            <div class="product__availability">موجودی: <span style="color: red;">در انبار موجود نیست</span></div>
+                            قیمت: <span style="color: #e63946; font-size: 20px; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); letter-spacing: 1px;">
+                                ناموجود
+                            </span>
+
+                            {% else %}
+                            <div class="product__availability">موجودی: <span class="text-success">موجود در انبار</span></div>
+                            {% if product.price > product.get_price_by_discount %}
+                            <div class="product__prices" style="font-size: 25px; color: red; margin-bottom: -20px;">
+                                <del>
+                                {{ product.price|intcomma }} تومان
+                                </del>
+                            </div>
+                            <div class="product__prices">{{ product.get_price_by_discount|intcomma }} تومان</div>
+                            {% else %}
+                            <div class="product__prices">{{ product.price|intcomma }} تومان</div>
+                            {% endif %}
+                            {% endif %}
+                            {% comment %} <div class="product__prices">{{ product.price | intcomma}} تومان</div> {% endcomment %}
+
+                            <!-- .product__options -->
+                            <form class="product__options">
+                                <!-- <div class="form-group product__option">
+                                    <label class="product__option-label">رنگ</label>
+                                    <div class="input-radio-color">
+                                        <div class="input-radio-color__list">
+                                            <label class="input-radio-color__item input-radio-color__item--white" style="color: #fff;" data-toggle="tooltip" title="White">
+                                                <input type="radio" name="color"> <span></span></label>
+                                            <label class="input-radio-color__item" style="color: #ffd333;" data-toggle="tooltip" title="Yellow">
+                                                <input type="radio" name="color"> <span></span></label>
+                                            <label class="input-radio-color__item" style="color: #ff4040;" data-toggle="tooltip" title="Red">
+                                                <input type="radio" name="color"> <span></span></label>
+                                            <label class="input-radio-color__item input-radio-color__item--disabled" style="color: #4080ff;" data-toggle="tooltip" title="Blue">
+                                                <input type="radio" name="color" disabled> <span></span></label>
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <div class="form-group product__option">
+                                    <label class="product__option-label">ویژگی ها</label>
+                                    <div class="input-radio-label">
+                                        <div class="input-radio-label__list">
+                                            {% for feature in product.product_features.all %}
+                                                <label>
+                                                    <input type="radio" name="material"> <span>{{ feature.feature }} : {{ feature.value }}</span>
+                                                </label>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group product__option">
+                                    <label class="product__option-label" for="product-quantity">تعداد</label>
+                                    <div class="product__actions">
+                                        {% if product.get_number_in_warehouse <= 0 %}
+                                            <div class="product__actions-item">
+                                                <div class="input-number product__quantity">
+                                                    <input class="form-control form-control-lg" type="number" min="1" value="1">
+                                                </div>
+                                            </div>
+                                            <div class="product__actions-item product__actions-item--addtocart">
+                                                <button type="button" class="btn btn-primary btn-lg" style="background-color: gray; cursor: not-allowed; border: 0;">افزودن به سبد</button>
+                                            </div>
+                                        {% else %}
+                                            <div class="product__actions-item">
+                                                <div class="input-number product__quantity">
+                                                    <input id="product-quantity" onclick="add_to_shop_cart({{product.id}},0)" class="form-control form-control-lg" type="number" min="1" value="1">
+                                                </div>
+                                            </div>
+                                            <div class="product__actions-item product__actions-item--addtocart">
+                                                <button type="button" class="btn btn-primary btn-lg">افزودن به سبد</button>
+                                            </div>
+                                        {% endif %}
+                                        <div class="product__actions-item product__actions-item--wishlist">
+                                            <button type="button" class="btn btn-secondary btn-svg-icon btn-lg" data-toggle="tooltip" title="Wishlist">
+                                                <svg width="16px" height="16px">
+                                                    <use xlink:href="images/sprite.svg#wishlist-16"></use>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        <div class="product__actions-item product__actions-item--compare">
+                                            <button type="button" class="btn btn-secondary btn-svg-icon btn-lg" data-toggle="tooltip" title="Compare">
+                                                <svg width="16px" height="16px">
+                                                    <use xlink:href="images/sprite.svg#compare-16"></use>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- .product__options / end -->
+                        </div>
+                        <!-- .product__end -->
+                        <div class="product__footer">
+                            {% comment %} <div class="product__tags tags">
+                                <div class="tags__list"><a href="">برچسب</a> <a href="">برچسب</a> <a href="">برچسب</a></div>
+                            </div> {% endcomment %}
+                            <div class="product__share-links share-links">
+                                <ul class="share-links__list">
+                                    <li class="share-links__item share-links__item--type--like"><a href="">اشتراک گذاری</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-tabs">
+                    <div class="product-tabs__list"><a href="#tab-description" class="product-tabs__item product-tabs__item--active">توضیحات</a> <a href="#tab-reviews" class="product-tabs__item">دیدگاه ها</a></div>
+                    <div class="product-tabs__content">
+                        <div class="product-tabs__pane product-tabs__pane--active" id="tab-description">
+                            <div class="typography">
+                                <h3>توضیحات کامل محصول</h3>
+                                {% autoescape off %}
+                                {{product.description}}
+                                {% endautoescape %}
+                            </div>
+                        </div>
+                        {% comment %} <div class="product-tabs__pane" id="tab-specification">
+                            <div class="spec">
+                                <h3 class="spec__header">مشخصات فنی</h3>
+                                <div class="spec__section">
+                                    <h4 class="spec__section-title">عمومی</h4>
+                                    <div class="spec__row">
+                                        <div class="spec__name">جنس</div>
+                                        <div class="spec__value">آلومینیوم، پلاستیک</div>
+                                    </div>
+                                    <div class="spec__row">
+                                        <div class="spec__name">نوع موتور</div>
+                                        <div class="spec__value">بدون برس</div>
+                                    </div>
+                                    <div class="spec__row">
+                                        <div class="spec__name">ولتاژ باتری</div>
+                                        <div class="spec__value">18 ولت</div>
+                                    </div>
+                                    <div class="spec__row">
+                                        <div class="spec__name">نوع باتری</div>
+                                        <div class="spec__value">لیتیوم یون</div>
+                                    </div>
+                                    <div class="spec__row">
+                                        <div class="spec__name">تعداد سرعت ها</div>
+                                        <div class="spec__value">2</div>
+                                    </div>
+                                    <div class="spec__row">
+                                        <div class="spec__name">زمان شارژ</div>
+                                        <div class="spec__value">2 ساعت</div>
+                                    </div>
+                                    <div class="spec__row">
+                                        <div class="spec__name">وزن</div>
+                                        <div class="spec__value">1.5 کیلوگرم</div>
+                                    </div>
+                                </div>
+                                <div class="spec__section">
+                                    <h4 class="spec__section-title">ابعاد</h4>
+                                    <div class="spec__row">
+                                        <div class="spec__name">طول</div>
+                                        <div class="spec__value">99 mm</div>
+                                    </div>
+                                    <div class="spec__row">
+                                        <div class="spec__name">عرض</div>
+                                        <div class="spec__value">207 mm</div>
+                                    </div>
+                                    <div class="spec__row">
+                                        <div class="spec__name">ارتفاع</div>
+                                        <div class="spec__value">208 mm</div>
+                                    </div>
+                                </div>
+                                <div class="spec__disclaimer">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با</div>
+                            </div>
+                        </div> {% endcomment %}
+                        <div class="product-tabs__pane" id="tab-reviews">
+                            <div class="reviews-view">
+                                <div class="reviews-view__list">
+                                    <h3 class="reviews-view__header">دیدگاه های مشتریان</h3>
+                                    <div class="reviews-list">
+                                        <ol class="reviews-list__content">
+                                            {% for comment in product.comments_product.all %}
+                                                {% if comment.is_active %}
+                                                    {% if comment.comment_parent == None %}
+                                                        <li class="reviews-list__item">
+                                                            <div class="review">
+                                                                <div class="review__avatar">
+                                                                    <img src="{{media}}/images/avatars/avatar-1.jpg" alt="">
+                                                                </div>
+                                                                <div class="review__content">
+                                                                    <div class="review__author">
+                                                                        {{comment.commenting_user.name}}
+                                                                    </div>
+                                                                    <div class="review__text">
+                                                                        {{comment.comment_text}}
+                                                                    </div>
+                                                                    <div class="review__date">
+                                                                        {{comment.register_date}}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            {% comment %}
+                                                            <div class="reviews-list__pagination">
+                                                                <ul class="pagination justify-content-center">
+                                                                    <li class="page-item disabled">
+                                                                        <a class="page-link page-link--with-arrow" href="" aria-label="Previous">
+                                                                            <svg class="page-link__arrow page-link__arrow--left" aria-hidden="true" width="8px" height="13px">
+                                                                                <use xlink:href="images/sprite.svg#arrow-rounded-left-8x13"></use>
+                                                                            </svg>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="page-item"><a class="page-link" href="">1</a></li>
+                                                                    <li class="page-item active">
+                                                                        <a class="page-link" href="">
+                                                                            2 <span class="sr-only">(کنونی)</span>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="page-item"><a class="page-link" href="">3</a></li>
+                                                                    <li class="page-item">
+                                                                        <a class="page-link page-link--with-arrow" href="" aria-label="Next">
+                                                                            <svg class="page-link__arrow page-link__arrow--right" aria-hidden="true" width="8px" height="13px">
+                                                                                <use xlink:href="images/sprite.svg#arrow-rounded-right-8x13"></use>
+                                                                            </svg>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            {% endcomment %}
+
+                                                            {% if user.is_authenticated %}
+                                                                <div>
+                                                                    <a class="btn btn-info" id="btn_{{comment.id}}" onclick="showCreateComment({{product.id}},{{comment.id}},'{{product.slug}}')">
+                                                                        پاسخ
+                                                                    </a>
+                                                                </div>
+                                                                <div id="comment_form_{{comment.id}}">
+                                                                </div>
+                                                            {% endif %}
+                                                        </li>
+
+                                                        {% for item in comment.comments_child.all %}
+                                                            {% if item.is_active %}
+                                                                <li class="reviews-list__item" style="background-color: beige; width: 95%; margin: 10px 50px;">
+                                                                    <div class="review">
+                                                                        <div class="review__avatar">
+                                                                            <img src="{{media}}/images/avatars/avatar-1.jpg" alt="">
+                                                                        </div>
+                                                                        <div class="review__content">
+                                                                            <div class="review__author">
+                                                                                {{item.commenting_user.name}}
+                                                                            </div>
+                                                                            <div class="review__text">
+                                                                                {{item.comment_text}}
+                                                                            </div>
+                                                                            <div class="review__date">
+                                                                                {{item.register_date}}
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                                {% comment %}
+                                                                <div class="reviews-list__pagination">
+                                                                    <ul class="pagination justify-content-center">
+                                                                        <li class="page-item disabled">
+                                                                            <a class="page-link page-link--with-arrow" href="" aria-label="Previous">
+                                                                                <svg class="page-link__arrow page-link__arrow--left" aria-hidden="true" width="8px" height="13px">
+                                                                                    <use xlink:href="images/sprite.svg#arrow-rounded-left-8x13"></use>
+                                                                                </svg>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="page-item"><a class="page-link" href="">1</a></li>
+                                                                        <li class="page-item active">
+                                                                            <a class="page-link" href="">
+                                                                                2 <span class="sr-only">(کنونی)</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="page-item"><a class="page-link" href="">3</a></li>
+                                                                        <li class="page-item">
+                                                                            <a class="page-link page-link--with-arrow" href="" aria-label="Next">
+                                                                                <svg class="page-link__arrow page-link__arrow--right" aria-hidden="true" width="8px" height="13px">
+                                                                                    <use xlink:href="images/sprite.svg#arrow-rounded-right-8x13"></use>
+                                                                                </svg>
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                                {% endcomment %}
+                                                            {% endif %}
+                                                        {% endfor %}
+                                                            
+                                                            
+                                                    {% endif %}
+                                                {% endif %}
+                                            {% endfor %}
+                                            {% if user.is_authenticated %}
+                                            
+                                                <h3 class="reviews-view__header">دیدگاه ها خود را بنویسید</h3>
+                                                <div class="row">
+                                                    <div class="col-12 col-lg-9 col-xl-8">
+                                                        {% render_partial 'csf:create_comment' slug=product.slug %}
+                                                    </div>
+                                                </div>
+
+                                            {% else %}
+                                            
+                                                <h5 style="margin: 50px 20px 0 0;">برای درج دیدگاه خود باید 
+                                                    <a href="{% url "accounts:login" %}">ورود</a>
+                                                    یا
+                                                    <a href="{% url "accounts:register" %}">ثبت نام</a>
+                                                    کنید
+                                                </h5>
+                                            {% endif %}
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- .block-products-carousel -->
+        {% render_partial "products:related_products" slug=product.slug %}
+        {% comment %} <div class="block block-products-carousel" data-layout="grid-5">
+            <div class="container">
+                <div class="block-header">
+                    <h3 class="block-header__title">محصولات مرتبط</h3>
+                    <div class="block-header__divider"></div>
+                    <div class="block-header__arrows-list">
+                        <button class="block-header__arrow block-header__arrow--left" type="button">
+                            <svg width="7px" height="11px">
+                                <use xlink:href="images/sprite.svg#arrow-rounded-left-7x11"></use>
+                            </svg>
+                        </button>
+                        <button class="block-header__arrow block-header__arrow--right" type="button">
+                            <svg width="7px" height="11px">
+                                <use xlink:href="images/sprite.svg#arrow-rounded-right-7x11"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="block-products-carousel__slider">
+                    <div class="block-products-carousel__preloader"></div>
+                    <div class="owl-carousel">
+                        <div class="block-products-carousel__column">
+                            <div class="block-products-carousel__cell">
+                                <div class="product-card">
+                                    <div class="product-card__badges-list">
+                                        <div class="product-card__badge product-card__badge--new">جدید</div>
+                                    </div>
+                                    <div class="product-card__image">
+                                        <a href="product.html">
+                                            <img src="https://picsum.photos/700/700" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="product-card__info">
+                                        <div class="product-card__name"><a href="product.html">اره برقی برندیکس مدل 300 وات</a></div>
+                                    </div>
+                                    <div class="product-card__actions">
+                                        <div class="product-card__availability">موجودی: <span class="text-success">موجود در انبار</span></div>
+                                        <div class="product-card__prices">749,000 تومان</div>
+                                        <div class="product-card__buttons">
+                                            <button class="btn btn-primary product-card__addtocart" type="button">
+                                                افزودن به سبد
+                                            </button>
+                                            <button	class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist"  type="button">
+                                                <i class="fa fa-heart"></i>
+                                                <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span>
+                                            </button>
+                                            <button	class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist"  type="button">
+                                                <i class="fa fa-shopping-cart"></i>
+                                                <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="block-products-carousel__column">
+                            <div class="block-products-carousel__cell">
+                                <div class="product-card">
+                                    <div class="product-card__badges-list">
+                                        <div class="product-card__badge product-card__badge--new">جدید</div>
+                                    </div>
+                                    <div class="product-card__image">
+                                        <a href="product.html">
+                                            <img src="https://picsum.photos/700/700" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="product-card__info">
+                                        <div class="product-card__name"><a href="product.html">اره برقی سشیسشیشیشس مدل 300 وات</a></div>
+                                    </div>
+                                    <div class="product-card__actions">
+                                        <div class="product-card__availability">موجودی: <span class="text-success">موجود در انبار</span></div>
+                                        <div class="product-card__prices">749,000 تومان</div>
+                                        <div class="product-card__buttons">
+                                            <button class="btn btn-primary product-card__addtocart" type="button">
+                                                افزودن به سبد
+                                            </button>
+                                            <button	class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist"  type="button">
+                                                <i class="fa fa-heart"></i>
+                                                <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span>
+                                            </button>
+                                            <button	class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist"  type="button">
+                                                <i class="fa fa-shopping-cart"></i>
+                                                <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> {% endcomment %}
+        <!-- .block-products-carousel / end -->
+    </div>
+{% endblock main %}

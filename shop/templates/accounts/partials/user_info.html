@@ -1,0 +1,39 @@
+<div class="dashboard__profile card profile-card">
+  <div class="card-body profile-card__body">
+    {% if user_info.image %}
+        <div class="profile-card__avatar">
+        <img src="{{media}}/{{user_info.image}}" alt=""/>
+        </div>
+    {% else %}
+        <div class="profile-card__avatar">
+        <img src="{{media}}/images/customer/nophoto.png" alt=""/>
+        </div>
+    {% endif %}
+    <div class="profile-card__name">{{user_info.name}} {{user_info.family}}</div>
+    <div class="profile-card__email">{{user_info.email}}</div>
+    <div class="profile-card__edit">
+      <a href="{% url "accounts:update_profile" %}" class="btn btn-secondary btn-sm">ویرایش پروفایل</a>
+    </div>
+  </div>
+</div>
+
+<div class="dashboard__address card address-card address-card--featured">
+  <div class="address-card__badge">آدرس</div>
+  <div class="address-card__body">
+    <div class="address-card__name">{{user_info.name}} {{user_info.family}}</div>
+    <div class="address-card__row">
+      {{user_info.address}}
+    </div>
+    <div class="address-card__row">
+      <div class="address-card__row-title">شماره تلفن</div>
+      <div class="address-card__row-content">
+        <span class="ltr_text">{{user_info.phone_number}}</span>
+      </div>
+    </div>
+    <div class="address-card__row">
+      <div class="address-card__row-title">آدرس ایمیل</div>
+      <div class="address-card__row-content">{{user_info.email}}</div>
+    </div>
+  </div>
+</div>
+

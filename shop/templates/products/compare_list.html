@@ -1,0 +1,10 @@
+{% extends "main.html" %} 
+{% load humanize %}
+{% load render_partial %}
+{% block main %}
+
+<div id="compare_list">
+    {% render_partial "products:compare_table" %}
+</div>
+
+{% endblock %}

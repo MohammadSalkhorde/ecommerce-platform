@@ -1,0 +1,13 @@
+{% load humanize %}
+{% if related_products %}
+    <div class="block block-products-carousel">
+        <div class="container">
+        {% include 'partials/products/root_group.html' with title='محصولات مرتبط' %}
+        <div class="product-grid">
+            {% for product in related_products %}
+            {% include "partials/products/product_box.html" %}
+            {% endfor %}
+        </div>
+        </div>
+    </div>
+{% endif %}

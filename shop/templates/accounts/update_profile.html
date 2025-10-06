@@ -1,0 +1,30 @@
+{% extends 'user_panel.html' %}
+{% load render_partial %}
+{% block main %}
+  <div class="block">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-9">
+                <div class="card flex-grow-1 wb-md-0">
+                    <div class="card-body">
+                        <h3 class="card-title">ویرایش پروفایل</h3>
+                        <form action="" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{form.as_p}}
+                            {% if image %}
+                                <img src="{{media}}/{{image}}" alt="" style="width: 100px; height: 100px;">
+                            {% else %}
+                                <img src="{{media}}/images/customer/nophoto.jpg" alt="" style="width: 100px; height: 100px;">
+                            {% endif %}
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary mt-4">ویرایش</button>
+                                <a href="{% url "accounts:panel" %}" class="btn btn-info mt-4">انصراف</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="format-detection" content="telephone=no">
+	<title>پنل کاربری | فروشگاه درسمن</title>
+	<link rel="icon" type="image/png" href="../images/favicon2.png">
+	<!-- css -->
+	<link rel="stylesheet" href="../vendor/bootstrap-4.5.3/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../vendor/owl-carousel-2.3.4/assets/owl.carousel.min.css">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/custom.css">
+	<!-- js -->
+	<script src="../vendor/jquery-3.3.1/jquery.min.js"></script>
+	<script src="../vendor/bootstrap-4.5.3/js/bootstrap.bundle.min.js"></script>
+	<script src="../vendor/owl-carousel-2.3.4/owl.carousel.min.js"></script>
+	<script src="../js/main.js"></script>
+	<!-- font - fontawesome -->
+	<link rel="stylesheet" href="../vendor/fontawesome-5.6.3/css/all.min.css">
+</head>
+
+<body>
+	<!-- mobilemenu -->
+	<div class="mobilemenu">
+		<div class="mobilemenu__backdrop"></div>
+		<div class="mobilemenu__body">
+			<div class="mobilemenu__header">
+				<div class="mobilemenu__title">منو</div>
+				<button type="button" class="mobilemenu__close">
+					<i class="fa fa-bars"></i>
+				</button>
+			</div>
+			<div class="mobilemenu__content">
+				<ul class="mobile-links mobile-links--level--0" data-collapse
+					data-collapse-opened-class="mobile-links__item--open">
+					<li class="mobile-links__item" data-collapse-item>
+						<div class="mobile-links__item-title"><a href="index.html"
+								class="mobile-links__item-link">خانه</a>
+							<button class="mobile-links__item-toggle" type="button" data-collapse-trigger>
+								<i class="fa fa-home"></i>
+							</button>
+						</div>
+					</li>
+					<li class="mobile-links__item" data-collapse-item>
+						<div class="mobile-links__item-title"><a href="" class="mobile-links__item-link">دسته ها</a>
+							<button class="mobile-links__item-toggle" type="button" data-collapse-trigger>
+								<i class="fa fa-list"></i>
+							</button>
+						</div>
+						<div class="mobile-links__item-sub-links" data-collapse-content>
+							<ul class="mobile-links mobile-links--level--1">
+								<li class="mobile-links__item" data-collapse-item>
+									<div class="mobile-links__item-title"><a href=""
+											class="mobile-links__item-link">کالای دیجیتال</a>
+										<button class="mobile-links__item-toggle" type="button" data-collapse-trigger>
+											<i class="fa fa-angle-double-down"></i>
+										</button>
+									</div>
+									<div class="mobile-links__item-sub-links" data-collapse-content>
+										<ul class="mobile-links mobile-links--level--2">
+											<li class="mobile-links__item" data-collapse-item>
+												<div class="mobile-links__item-title"><a href=""
+														class="mobile-links__item-link">موبایل</a></div>
+											</li>
+											<li class="mobile-links__item" data-collapse-item>
+												<div class="mobile-links__item-title"><a href=""
+														class="mobile-links__item-link">لپ تاپ</a></div>
+											</li>
+											<li class="mobile-links__item" data-collapse-item>
+												<div class="mobile-links__item-title"><a href=""
+														class="mobile-links__item-link">دوربین</a></div>
+											</li>
+											<li class="mobile-links__item" data-collapse-item>
+												<div class="mobile-links__item-title"><a href=""
+														class="mobile-links__item-link">سخت افزار</a></div>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<li class="mobile-links__item" data-collapse-item>
+									<div class="mobile-links__item-title">
+										<a href="" class="mobile-links__item-link">مد و پوشاک</a>
+										<button class="mobile-links__item-toggle" type="button" data-collapse-trigger>
+											<i class="fa fa-angle-double-down"></i>
+										</button>
+									</div>
+									<div class="mobile-links__item-sub-links" data-collapse-content>
+										<ul class="mobile-links mobile-links--level--2">
+											<li class="mobile-links__item" data-collapse-item>
+												<div class="mobile-links__item-title">
+													<a href="" class="mobile-links__item-link">پوشاک مردانه</a>
+												</div>
+											</li>
+											<li class="mobile-links__item" data-collapse-item>
+												<div class="mobile-links__item-title">
+													<a href="" class="mobile-links__item-link">پوشاک زنانه</a>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</li>
+
+					<li class="mobile-links__item" data-collapse-item>
+						<div class="mobile-links__item-title"><a href="#" class="mobile-links__item-link">حساب
+								کاربری</a>
+							<button class="mobile-links__item-toggle" type="button" data-collapse-trigger>
+								<i class="fa fa-user"></i>
+							</button>
+						</div>
+						<div class="mobile-links__item-sub-links" data-collapse-content>
+							<ul class="mobile-links mobile-links--level--1">
+								<li class="mobile-links__item" data-collapse-item>
+									<div class="mobile-links__item-title">
+										<a href="login.html" class="mobile-links__item-link">ورود</a>
+									</div>
+								</li>
+								<li class="mobile-links__item" data-collapse-item>
+									<div class="mobile-links__item-title">
+										<a href="register.html" class="mobile-links__item-link">ثبت نام</a>
+									</div>
+								</li>
+
+							</ul>
+						</div>
+					</li>
+					<li class="mobile-links__item" data-collapse-item>
+						<div class="mobile-links__item-title"><a href="index.html"
+								class="mobile-links__item-link">بلاگ</a>
+							<button class="mobile-links__item-toggle" type="button" data-collapse-trigger>
+								<i class="fa fa-newspaper"></i>
+							</button>
+						</div>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- mobilemenu / end -->
+	<!-- site -->
+
+	<div class="site">
+
+		<!-- mobile site__header -->
+		<header class="site__header d-lg-none">
+			<div class="mobile-header mobile-header--sticky mobile-header--stuck">
+				<div class="mobile-header__panel">
+					<div class="container">
+						<div class="mobile-header__body">
+							<button class="mobile-header__menu-button">
+								<i class="fa fa-bars "></i>
+							</button>
+							<a class="mobile-header__logo" href="index.html">
+								<img src="images/logo.png" alt="">
+							</a>
+							<div class="mobile-header__search">
+								<form class="mobile-header__search-form" action="">
+									<input class="mobile-header__search-input" name="search"
+										placeholder="جستجو از میان 10,000 محصول" aria-label="Site search" type="text"
+										autocomplete="off">
+									<button class="mobile-header__search-button mobile-header__search-button--submit"
+										type="submit">
+										<i class="fa fa-search"></i>
+									</button>
+									<button class="mobile-header__search-button mobile-header__search-button--close"
+										type="button">
+										<i class="fa fa-times"></i>
+									</button>
+									<div class="mobile-header__search-body"></div>
+								</form>
+							</div>
+							<div class="mobile-header__indicators">
+								<div class="indicator indicator--mobile-search indicator--mobile d-sm-none">
+									<button class="indicator__button"><span class="indicator__area">
+											<i class="fa fa-search"></i>
+										</span></button>
+								</div>
+								<div class="indicator indicator--mobile d-sm-flex d-none">
+									<a href="wishlist.html"	class="indicator__button">
+										<span class="indicator__area">
+											<i class="fa fa-heart"></i>
+											<span class="indicator__value">0</span>
+										</span>
+									</a>
+								</div>
+								<div class="indicator indicator--mobile d-sm-flex d-none">
+									<a href="wishlist.html"	class="indicator__button">
+										<span class="indicator__area">
+											<i class="fa fa-heart"></i>
+											<span class="indicator__value">0</span>
+										</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- mobile site__header / end -->
+
+		<!-- desktop site__header -->
+		<header class="site__header d-lg-block d-none">
+			<div class="site-header">
+
+				<!-- .topbar -->
+				<div class="site-header__topbar topbar">
+					<div class="topbar__container container">
+						<div class="topbar__row">
+							<div class="topbar__item topbar__item--link"><a class="topbar-link"
+									href="../about-us.html">درباره ما</a></div>
+							<div class="topbar__item topbar__item--link"><a class="topbar-link"
+									href="../contact-us.html">تماس با ما</a></div>
+							<div class="topbar__spring"></div>
+							<div class="topbar__item">
+								<div class="topbar-dropdown">
+									<button class="topbar-dropdown__btn" type="button">
+										<a href="#" class="topbar-link">پنل کاربری</a>
+										<i class="fa fa-user"></i>
+									</button>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="site-header__middle container">
+					<div class="site-header__logo">
+						<a href="index.html">
+							<img src="images/logo.png" alt="">
+						</a>
+					</div>
+					<div class="site-header__search">
+						<div class="search">
+							<form class="search__form" action="">
+								<input class="search__input" name="search" placeholder="جستجو از میان 10,000 محصول"
+									aria-label="Site search" type="text" autocomplete="off">
+								<button class="search__button" type="submit">
+									<i class="fa fa-search"></i>
+								</button>
+								<div class="search__border"></div>
+							</form>
+						</div>
+					</div>
+					<div class="site-header__phone">
+						<div class="site-header__phone-title">پشتیبانی</div>
+						<div class="site-header__phone-number"><span class="ltr_text">081-45231</span></div>
+					</div>
+				</div>
+				<!-- .topbar / end -->
+				<div class="site-header__nav-panel">
+					<div class="nav-panel">
+						<div class="nav-panel__container container">
+							<div class="nav-panel__row">
+								<div class="nav-panel__logo">
+									<a href="index.html">
+										<img src="images/shopLogo.png" alt="">
+									</a>
+								</div>
+								<!-- .nav-links -->
+								<div class="nav-panel__nav-links nav-links">
+									<ul class="nav-links__list">
+										<li class="nav-links__item nav-links__item--with-submenu">
+											<a href="index.html">
+												<span><i class="fa fa-home"></i>&nbsp; خانه</span>
+											</a>
+										</li>
+										<li class="nav-links__item nav-links__item--with-submenu">
+											<a href="product-categories.html">
+												<span>
+													دسته بندی کالاها
+													&nbsp;
+													<i class="fa fa-angle-down"></i>
+												</span>
+											</a>
+											<div class="nav-links__megamenu nav-links__megamenu--size--nl">
+												<!-- .megamenu -->
+												<div class="megamenu">
+													<div class="row">
+														<div class="col-4">
+															<ul class="megamenu__links megamenu__links--level--0">
+																<li class="megamenu__item megamenu__item--with-submenu">
+																	<a href="">کالای دیجیتال</a>
+																	<ul
+																		class="megamenu__links megamenu__links--level--1">
+																		<li class="megamenu__item">
+																			<a href="#">موبایل</a>
+																			<ul>
+																				<li class="megamenu__links--level--2">
+																					<a href="#">لوازم جانبی</a>
+																				</li>
+																				<li class="megamenu__links--level--2">
+																					<a href="#">گوشی</a>
+																				</li>
+																			</ul>
+																		</li>
+																		<li class="megamenu__item">
+																			<a href="#">دوربین</a>
+																		</li>
+																		<li class="megamenu__item">
+																			<a href="#">لپ تاپ</a>
+																		</li>
+																		<li class="megamenu__item">
+																			<a href="#">سخت افزار کامپیوتر</a>
+																		</li>
+																	</ul>
+																</li>
+															</ul>
+														</div>
+														<div class="col-4">
+															<ul class="megamenu__links megamenu__links--level--0">
+																<li class="megamenu__item megamenu__item--with-submenu">
+																	<a href="">مد و پوشاک</a>
+																	<ul
+																		class="megamenu__links megamenu__links--level--1">
+																		<li class="megamenu__item">
+																			<a href="#">مردانه</a>
+																			<ul>
+																				<li class="megamenu__links--level--2">
+																					<a href="#">پیراهن</a>
+																				</li>
+																				<li class="megamenu__links--level--2">
+																					<a href="#">شلوار</a>
+																				</li>
+																				<li class="megamenu__links--level--2">
+																					<a href="#">کفش</a>
+																				</li>
+																			</ul>
+																		</li>
+																		<li class="megamenu__item">
+																			<a href="#">زنانه</a>
+																			<ul>
+																				<li class="megamenu__links--level--2">
+																					<a href="#">پیراهن</a>
+																				</li>
+																				<li class="megamenu__links--level--2">
+																					<a href="#">شلوار</a>
+																				</li>
+																				<li class="megamenu__links--level--2">
+																					<a href="#">کفش</a>
+																				</li>
+																			</ul>
+																		</li>
+																		<li class="megamenu__item">
+																			<a href="#">بچه گانه</a>
+																		</li>
+
+																	</ul>
+																</li>
+															</ul>
+														</div>
+														<div class="col-4">
+															<ul class="megamenu__links megamenu__links--level--0">
+																<li class="megamenu__item megamenu__item--with-submenu">
+																	<a href="">مواد غذایی</a>
+																	<ul
+																		class="megamenu__links megamenu__links--level--1">
+																		<li class="megamenu__item">
+																			<a href="#">کالای اساسی و خواربار</a>
+																			<ul>
+																				<li class="megamenu__links--level--2">
+																					<a href="#">برنج</a>
+																				</li>
+																				<li class="megamenu__links--level--2">
+																					<a href="#">قند</a>
+																				</li>
+																				<li class="megamenu__links--level--2">
+																					<a href="#">سایر</a>
+																				</li>
+																			</ul>
+																		</li>
+																		<li class="megamenu__item">
+																			<a href="#">نوشیدنی</a>
+																			<ul>
+																				<li class="megamenu__links--level--2">
+																					<a href="#">چای</a>
+																				</li>
+																				<li class="megamenu__links--level--2">
+																					<a href="#">دمنوش</a>
+																				</li>
+																			</ul>
+																		</li>
+
+
+																	</ul>
+																</li>
+															</ul>
+														</div>
+
+													</div>
+												</div>
+												<!-- .megamenu / end -->
+											</div>
+										</li>
+
+										<li class="nav-links__item nav-links__item--with-submenu">
+											<a href="#">
+												<span>
+													حساب کاربری&nbsp;<i class="fa fa-angle-down"></i>
+												</span>
+											</a>
+											<div class="nav-links__menu">
+												<!-- .menu -->
+												<ul class="menu menu--layout--classic">
+													<li><a href="login.html">ورود</a></li>
+													<li><a href="register.html">ثبت نام</a></li>
+												</ul>
+												<!-- .menu / end -->
+											</div>
+										</li>
+										<li class="nav-links__item nav-links__item--with-submenu">
+											<a href="blog.html">
+												<span><i class="fa fa-newspaper"></i>&nbsp; بلاگ</span>
+											</a>
+										</li>
+
+									</ul>
+								</div>
+								<!-- .nav-links / end -->
+								<div class="nav-panel__indicators">
+									<div class="indicator indicator--trigger--click">
+										<button type="button" class="indicator__button">
+											<span class="indicator__area">
+												<i class="fa fa-plus"></i>
+											</span>
+										</button>
+										<div class="indicator__dropdown">
+											<div class="drop-search">
+												<form action="" class="drop-search__form">
+													<input class="drop-search__input" name="search"
+														placeholder="جستجو از میان 10,000 محصول"
+														aria-label="Site search" type="text" autocomplete="off">
+													<button class="drop-search__button drop-search__button--submit"
+														type="submit">
+														<i class="fa fa-search"></i>
+													</button>
+												</form>
+											</div>
+										</div>
+									</div>
+									<div class="indicator">
+										<a href="wishlist.html" class="indicator__button">
+											<span class="indicator__area">
+												<i class="fa fa-heart"></i>
+												<span class="indicator__value">0</span>
+											</span>
+										</a>
+									</div>
+									<div class="indicator">
+										<a href="cart.html" class="indicator__button">
+											<span class="indicator__area">
+												<i class="fa fa-shopping-cart"></i>
+												<span class="indicator__value">3</span>
+											</span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- desktop site__header / end -->
+		<!-- site__body -->
+		<div class="site__body">
+			<div class="page-header">
+				<div class="page-header__container container">
+					<div class="page-header__breadcrumb">
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="user-dashboard.html">داشبورد</a>
+									/
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">ویرایش پروفایل</li>
+							</ol>
+						</nav>
+					</div>
+					<div class="page-header__title">
+						<h1>حساب کاربری</h1></div>
+				</div>
+			</div>
+			<div class="block">
+				<div class="container">
+					<div class="row">
+						<div class="col-12 col-lg-3 d-flex">
+							<div class="account-nav flex-grow-1">
+								<h4 class="account-nav__title">ناوبری</h4>
+								<ul>
+									<li class="account-nav__item account-nav__item--active"><a href="user-dashboard.html">داشبورد</a></li>
+									<li class="account-nav__item"><a href="user-profile.html">ویرایش پروفایل</a></li>
+									<li class="account-nav__item"><a href="orders-records.html">سابقه خرید</a></li>
+									<li class="account-nav__item"><a href="change-password.html">تغییر رمز عبور</a></li>
+									<li class="account-nav__item"><a href="../index.html">خروج</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-12 col-lg-9 mt-4 mt-lg-0">
+							<div class="card">
+								<div class="card-header">
+									<h5>ویرایش پروفایل</h5></div>
+								<div class="card-divider"></div>
+								<div class="card-body">
+									<div class="row no-gutters">
+										<div class="col-12 col-lg-7 col-xl-6">
+											<div class="form-group">
+												<label for="profile-first-name">نام</label>
+												<input type="text" class="form-control" id="profile-first-name" placeholder="نام">
+											</div>
+											<div class="form-group">
+												<label for="profile-last-name">نام خانوادگی</label>
+												<input type="text" class="form-control" id="profile-last-name" placeholder="نام خانوادگی">
+											</div>
+											<div class="form-group">
+												<label for="profile-email">آدرس ایمیل</label>
+												<input type="email" class="form-control" id="profile-email" placeholder="آدرس ایمیل">
+											</div>
+											<div class="form-group">
+												<label for="profile-phone">شماره تلفن</label>
+												<input type="text" class="form-control" id="profile-phone" placeholder="شماره تلفن">
+											</div>
+											<div class="form-group mt-5 mb-0">
+												<button class="btn btn-primary">ذخیره</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- site__body / end -->
+		<!-- site__footer -->
+		<footer class="site__footer">
+			<div class="site-footer">
+				<div class="container">
+					<div class="site-footer__widgets">
+						<div class="row">
+							<div class="col-12 col-md-6 col-lg-4">
+								<div class="site-footer__widget footer-contacts">
+									<h5 class="footer-contacts__title">تماس با ما</h5>
+
+									<ul class="footer-contacts__contacts">
+										<li><i class="footer-contacts__icon fas fa-globe-americas"></i>
+											ملایر، خیابان شهدا</li>
+										<li><i class="footer-contacts__icon fas fa-mobile-alt"></i>
+											<span class="ltr_text">081-45231</span>
+										</li>
+
+									</ul>
+								</div>
+							</div>
+							<div class="col-6 col-md-3 col-lg-2">
+								<div class="site-footer__widget footer-links">
+									<h5 class="footer-links__title">اطلاعات</h5>
+									<ul class="footer-links__list">
+										<li class="footer-links__item">
+											<a href="" class="footer-links__link">درباره ما</a>
+										</li>
+										<li class="footer-links__item">
+											<a href="" class="footer-links__link">تماس با ما</a>
+										</li>
+										<li class="footer-links__item">
+											<a href="" class="footer-links__link">قوانین و مقررات</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-6 col-md-3 col-lg-2">
+								<div class="site-footer__widget footer-links">
+									<h5 class="footer-links__title">حساب کاربری</h5>
+									<ul class="footer-links__list">
+										<li class="footer-links__item">
+											<a href="login.html" class="footer-links__link">
+												ورود
+											</a>
+										</li>
+										<li class="footer-links__item">
+											<a href="register.html" class="footer-links__link">
+												ثبت نام
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-12 col-md-12 col-lg-4">
+								<div class="site-footer__widget footer-newsletter">
+									<h5 class="footer-contacts__title">شبکه های</h5>
+									<div class="footer-newsletter__text footer-newsletter__text--social">ما را در شبکه
+										های اجتماعی دنبال کنید</div>
+									<ul class="footer-newsletter__social-links">
+										<li
+											class="footer-newsletter__social-link footer-newsletter__social-link--facebook">
+											<a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+										</li>
+										<li
+											class="footer-newsletter__social-link footer-newsletter__social-link--twitter">
+											<a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+										</li>
+										<li
+											class="footer-newsletter__social-link footer-newsletter__social-link--youtube">
+											<a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+										</li>
+										<li
+											class="footer-newsletter__social-link footer-newsletter__social-link--instagram">
+											<a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+										</li>
+										<li class="footer-newsletter__social-link footer-newsletter__social-link--rss">
+											<a href="#" target="_blank"><i class="fas fa-rss"></i></a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="site-footer__bottom">
+
+						<div class="site-footer__copyright">
+							کلیه حقوق و امتیازات این وبسایت متعلق است به آکادمی
+							<a href="https://darsman.com" target="_blank">درسمن</a>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- site__footer / end -->
+	</div>
+	<!-- site / end -->
+</body>
+
+</html>
