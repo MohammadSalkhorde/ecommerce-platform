@@ -120,6 +120,5 @@ For professional inquiries or collaboration, feel free to contact me:
 
 - **GitHub:** [https://github.com/MohammadSalkhorde](https://github.com/MohammadSalkhorde)  
 - **Email:** m.salkhorde444@gmail.com 
-- **LinkedIn:** [www.linkedin.com/in/mohammad-salkhorde-a13767385](www.linkedin.com/in/
-mohammad-salkhorde-a13767385)  
+- **LinkedIn:** [https://www.linkedin.com/in/mohammad-salkhorde-a13767385](https://www.linkedin.com/in/mohammad-salkhorde-a13767385)
 - **Portfolio:** [https://mohammadsalkhorde.github.io/portfolio/](https://mohammadsalkhorde.github.io/portfolio/)
