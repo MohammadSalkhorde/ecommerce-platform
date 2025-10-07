@@ -3,6 +3,7 @@
 ![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)
 ![Django](https://img.shields.io/badge/Django-5.0-success?logo=django)
 ![DRF](https://img.shields.io/badge/DRF-3.15-red?logo=django)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow?logo=javascript)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
 ProShop is a **fully-featured e-commerce platform** built with **Django** and **Django REST Framework**, offering user registration with SMS authentication, personalized dashboards, and advanced admin features.  
