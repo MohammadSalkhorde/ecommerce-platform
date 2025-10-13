@@ -138,6 +138,13 @@ class Product(models.Model):
     def getMainProductGroups(self):
         return self.product_group.all()[0].id
     
+    def get_sell(self):
+        sum=self.warehouse_products.filter(warehouse_type_id=2).aggregate(Sum('qty'))
+        qty=0
+        if sum['qty__sum']!=None:
+            qty=sum['qty__sum']
+        return qty
+    
     class Meta:
         verbose_name='کالا'
         verbose_name_plural="کالا ها"

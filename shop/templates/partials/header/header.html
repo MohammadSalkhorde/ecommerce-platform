@@ -24,9 +24,9 @@
 
     <div class="site-header__middle container">
       <div class="site-header__logo">
-        <a href="{% url "main:index" %}">
+        {% comment %} <a href="{% url "main:index" %}">
           <img src="{{media}}/images/logo.png" alt="">
-        </a>
+        </a> {% endcomment %}
       </div>
       <div class="site-header__search">
         <div class="search">
@@ -240,6 +240,7 @@
                   </div>
                 </div>
               </div>
+              {% if user.is_authenticated %}
               <div class="indicator">
                 <a href="{% url "csf:user_favorite" %}" class="indicator__button">
                   <span class="indicator__area">
@@ -248,6 +249,16 @@
                   </span>
                 </a>
               </div>
+              {% else %}
+              <div class="indicator">
+                <a href="{% url "accounts:login" %}" class="indicator__button">
+                  <span class="indicator__area">
+                    <i class="fa fa-heart"></i>
+                    <span class="indicator__value indicator__value2">0</span>
+                  </span>
+                </a>
+              </div>
+              {% endif %}
               <div class="indicator">
                 <a href="{% url "orders:shop_cart" %}" class="indicator__button">
                   <span class="indicator__area">

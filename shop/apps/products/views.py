@@ -238,3 +238,28 @@ def status_of_compare_list(request):
     return HttpResponse(compareList.count)
 
 #-------------------------------------------------------------------------------
+def get_sell():
+    products = Product.objects.all()
+    dict1 = {}
+    for i in products:
+        sell = i.get_sell() or 0  
+        dict1[i.id] = sell
+    return dict1
+
+
+#===========================================================================
+def get_best_sellers(request, limit=5):
+    sell_data = get_sell()  
+
+    sorted_products = sorted(
+        ((pid, sell or 0) for pid, sell in sell_data.items()),
+        key=lambda x: x[1],
+        reverse=True
+    )
+
+    top_ids = [pid for pid, _ in sorted_products[:limit]]
+
+    best_sellers = Product.objects.filter(id__in=top_ids)[:6]
+
+    return render(request, 'products/partials/best_sellers.html', {'products': best_sellers})
+#===========================================================================

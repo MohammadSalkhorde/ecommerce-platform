@@ -20,4 +20,5 @@ urlpatterns = [
     path('add_to_compare_list/',add_to_compare_list,name='add_to_compare_list'),
     path('delete_from_compare_list/',delete_from_compare_list,name='delete_from_compare_list'),
     path('status_of_compare_list/',status_of_compare_list,name='status_of_compare_list'),
+    path('get_best_sellers/',get_best_sellers,name='get_best_sellers'),
 ]
