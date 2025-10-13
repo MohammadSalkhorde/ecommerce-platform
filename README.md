@@ -25,7 +25,7 @@ Designed both as a **learning project** and a **foundation for production-level 
 
 * **Backend:** Python, Django, Django REST Framework  
 * **Frontend:** HTML, CSS, JavaScript  
-* **Databases:** MySQL, PostgreSQL, SQLite, MongoDB  
+* **Databases:** MySQL  
 * **APIs:** SMS authentication, ZarinPal payment gateway  
 
 ---
